@@ -1,0 +1,66 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Production Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="header">
+        <h1>Production Dashboard</h1>
+    </div>
+
+    <div class="production-data">
+        <div class="card">
+            <h2>Energy Consumption</h2>
+            <p><strong>Date:</strong> {{ selected_date }} = {{ energy_today }} kWh</p>
+            <p><strong>Month:</strong> {{ current_month }} = {{ energy_month }} kWh</p>
+        </div>
+        <div class="card">
+            <h2>Total Product Made</h2>
+            <p><strong>Date:</strong> {{ selected_date }} = {{ total_production_today }} Products</p>
+            <p><strong>Month:</strong> {{ current_month }} = {{ products_per_month }} Products</p>
+        </div>
+    </div>
+
+    <form method="get" class="filter-form">
+        <label for="date"><strong>Select Date:</strong></label>
+        <input type="date" name="date" id="date" value="{{ selected_date }}">
+        <button type="submit" class="btn">Filter</button>
+    </form>
+    
+    <center>
+        <h4><p>Showing results for date : {{selected_date}}</p></h4>
+    </center>
+
+    <div class="chart-container">
+        <div class="chart-card">
+            <h2>Production per line</h2>
+            <canvas id="lineChart" width="600" height="300"></canvas>
+            <script id="lineLabels" type="application/json">{{ line_labels|safe }}</script>
+            <script id="lineData" type="application/json">{{ line_totals|safe }}</script>
+        </div>
+
+        <div class="chart-card">
+            <h2>Production per shift</h2>
+            <canvas id="shiftChart" width="600" height="300"></canvas>
+            <script id="shiftLabels" type="application/json">{{ shift_labels|safe }}</script>
+            <script id="shiftData" type="application/json">{{ shift_totals|safe }}</script>
+        </div>
+    </div>
+    
+    <div class="chart-container">
+        <div class="chart-card">
+            <h2>Production of per product</h2>
+            <canvas id="productChart" width="600" height="300"></canvas>
+            <script id="productLabels" type="application/json">{{ product_labels|safe }}</script>
+            <script id="productData" type="application/json">{{ product_totals|safe }}</script>
+        </div>
+    </div>
+
+    <script src="{% static 'js/charts.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e9e2e2;
+    color: #333;
+}
+
+.header {
+    background-color: #6eb8bf;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.production-data {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+.filter-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    gap: 10px;
+}
+
+.filter-form label {
+    font-weight: bold;
+}
+
+.filter-form input {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.filter-form .btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.filter-form .btn:hover {
+    background-color: #45a049;
+}
+
+.chart-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.chart-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    width: 600px;
+    text-align: center;
+}
+
+.navbar {
+    background-color: #4CAF50;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 16px;
+}
+
+.navbar a:hover {
+    background-color: #45a049;
+    border-radius: 4px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    padding: 20px;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+}
+
+.data-table thead tr {
+    background-color: #4CAF50;
+    color: white;
+    text-align: left;
+}
+
+.data-table th, .data-table td {
+    border: 1px solid #dbadad;
+    padding: 10px;
+}
+
+.data-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.data-table tbody tr:hover {
+    background-color: #ddd;
+}

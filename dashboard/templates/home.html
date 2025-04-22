@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <title>Home</title>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="content">
+        <center><h2>Production Data</h2></center>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Operator</th>
+                    <th>Line</th>
+                    <th>Shift</th>
+                    <th>Product</th>
+                    <th>Total Production</th>
+                    <th>Total Energy Consumed</th>
+                    <th>Created Date</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in production_data %}
+                <tr>
+                    <td>{{ data.created_by }}</td>
+                    <td>{{ data.line.line_name }}</td>
+                    <td>{{ data.shift.shift_name }}</td>
+                    <td>{{ data.product.product_name }}</td>
+                    <td>{{ data.total_production }}</td>
+                    <td>{{ data.total_energy_consumed }}</td>
+                    <td>{{ data.date }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

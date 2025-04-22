@@ -42,7 +42,7 @@ class ProductionData(models.Model):
     shift = models.ForeignKey(Shift, on_delete=models.CASCADE, related_name='production_data')
     date = models.DateField(default=timezone.now)
     line_speed = models.FloatField()
-    total_production = models.FloatField()
+    total_production = models.IntegerField()
     total_energy_consumed = models.FloatField()
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
 

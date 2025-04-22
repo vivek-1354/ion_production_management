@@ -25,6 +25,12 @@ SECRET_KEY = 'django-insecure-4f6e#-a%d^m0=p)#j&-ny9i5dl1gfhkpa=^ru$!frwy*4#v_)4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+
 ALLOWED_HOSTS = []
 
 
@@ -37,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core'
+    'core',
 ]
 
 MIDDLEWARE = [
